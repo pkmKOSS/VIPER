@@ -19,9 +19,9 @@ final class CountryListInteractor: CountryListInteractorProtocol {
 
     // MARK: - Public methods
 
-    func fetchCountrys(completion: @escaping ([Country]) -> ()) {
-        networkService.fetchCountry { countrys in
-            completion(countrys)
+    func fetchCountries(completion: @escaping ([Country]) -> ()) {
+        networkService.fetchCountry { countries in
+            completion(countries)
         }
     }
 }

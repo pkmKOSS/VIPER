@@ -5,6 +5,6 @@
 import Foundation
 
 /// Протокол представления модуля со списком стран
-protocol CountryListViewProtocol {
-    func showCountrys(countrys: [Country])
+protocol CountryListViewProtocol: class {
+    func showCountries(countries: [Country])
 }

@@ -10,9 +10,10 @@ final class CountryListScreenBuilder: CountryListScreenBuilderProtocol {
     // MARK: - Public methods
     
     func build() -> UIViewController {
+        let builder = CountryDescriptionBuilder()
         let networkService = MockNetworkService()
         let interactor = CountryListInteractor(networkService: networkService)
-        let router = CountryListRouter()
+        let router = CountryListRouter(builder: builder)
         let presenter = CountryListPresenter(interactor: interactor, router: router)
         let viewController = CountryListViewController(presenter: presenter)
         router.viewController = viewController

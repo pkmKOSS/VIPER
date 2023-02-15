@@ -13,17 +13,5 @@ struct Country {
     /// Изображение
     let imageName: String
     /// Отели страны
-    let hontels: [Hotel]
-}
-
-/// Отель
-struct Hotel {
-    /// Название
-    let name: String
-    /// Цена
-    let cost: Int
-    /// Имя изображения
-    let imageName: String
-    /// Описание
-    let hotelDescription: String
+    let hontel: [Hotel]
 }

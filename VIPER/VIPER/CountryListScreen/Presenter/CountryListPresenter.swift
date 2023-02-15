@@ -13,7 +13,7 @@ final class CountryListPresenter: CountryListPresenterProtocol {
     private let router: CountryListRoutingProtocol
 
     // MARK: - Public properties
-    weak var viewInput: CountryListViewController?
+    weak var viewInput: CountryListViewProtocol?
 
     // MARK: - Init
 
@@ -24,10 +24,10 @@ final class CountryListPresenter: CountryListPresenterProtocol {
 
     // MARK: - Public methods
 
-    func fetchCountrys() {
-        interactor.fetchCountrys { [ weak self ] countrys in
+    func fetchCountries() {
+        interactor.fetchCountries { [ weak self ] countries in
             guard let self = self else { return }
-            self.viewInput?.showCountrys(countrys: countrys)
+            self.viewInput?.showCountries(countries: countries)
         }
     }
 

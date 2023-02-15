@@ -6,6 +6,6 @@ import Foundation
 
 /// Протокол презентеря модуля со списком стран
 protocol CountryListPresenterProtocol {
-    func fetchCountrys()
+    func fetchCountries()
     func routTo(hotels: [Hotel])
 }

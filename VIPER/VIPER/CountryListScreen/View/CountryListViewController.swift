@@ -11,13 +11,11 @@ final class CountryListViewController: UIViewController, CountryListViewProtocol
     
     var countryTableView = UITableView()
 
-    // MARK: - Public properties
-
 
     // MARK: - Private properties
 
     private let presenter: CountryListPresenterProtocol
-    private var countrys: [Country] = []
+    private var countries: [Country] = []
 
     // MARK: - Init
 
@@ -39,8 +37,8 @@ final class CountryListViewController: UIViewController, CountryListViewProtocol
     
     // MARK: - Public methods
     
-    func showCountrys(countrys: [Country]) {
-        self.countrys = countrys
+    func showCountries(countries: [Country]) {
+        self.countries = countries
         DispatchQueue.main.async {
             self.countryTableView.reloadData()
         }
@@ -55,7 +53,7 @@ final class CountryListViewController: UIViewController, CountryListViewProtocol
     private func configureSreen() {
         registerCountryListCell()
         configureCountryTableView()
-        presenter.fetchCountrys()
+        presenter.fetchCountries()
     }
 
     private func configureCountryTableView() {
@@ -77,11 +75,11 @@ final class CountryListViewController: UIViewController, CountryListViewProtocol
 extension CountryListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.routTo(hotels: countrys[indexPath.row].hontels)
+        presenter.routTo(hotels: countries[indexPath.row].hontel)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        countrys.count
+        countries.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,7 +89,7 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
         else {
             return UITableViewCell()
         }
-        cell.configure(country: countrys[indexPath.row])
+        cell.configure(country: countries[indexPath.row])
         return cell
     }
 }

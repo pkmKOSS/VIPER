@@ -9,7 +9,7 @@ final class MockNetworkService: NetworkServiceProtocol {
 
     // MARK: - Private properties
 
-    private let countryList = CountryListConstant().countrysList
+    private let countryList = CountryListConstant().countriesList
 
     // MARK: - Public method
 

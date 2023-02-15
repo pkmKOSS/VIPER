@@ -6,5 +6,5 @@ import Foundation
 
 /// Протокол интерактора модуля со списком стран
 protocol CountryListInteractorProtocol {
-    func fetchCountrys(completion: @escaping ([Country]) -> ())
+    func fetchCountries(completion: @escaping ([Country]) -> ())
 }
